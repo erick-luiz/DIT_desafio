@@ -1,0 +1,64 @@
+{
+	"variables": [],
+	"info": {
+		"name": "desafiodit",
+		"_postman_id": "fa58b2db-0733-156c-e768-7f2af4ec073b",
+		"description": "Esta coleção deve ser utilizada para testar a Aplicação de desafio proposta pela DIT para novos colaboradores. ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Invoice",
+			"description": "Requests para o recurso Invoice. ",
+			"item": [
+				{
+					"name": "/invoice",
+					"request": {
+						"url": "{{dit_api_env}}/invoice",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept-Language",
+								"value": "",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Carro\", \n\t\"amount\":651.10, \n\t\"dueDate\":\"2020-07-01\",\n\t\"paymentDate\":\"2020-07-10\"\n}"
+						},
+						"description": "Serviço de cadastro de novos invoices (contas, faturas). Neste serviços devemos mandar: \n* __Name__: nome da sua conta. Exemplo: parcela do carro. \n* __amount__: valor total a ser pago\n* __dueDate__: data de vencimento da conta \n* __paymentDate__: data do pagamento da conta\n\n## Internacionalização \n\n* Este request aceita o header Accepted-Language = pt-br para retorno em português"
+					},
+					"response": []
+				},
+				{
+					"name": "/invoice",
+					"request": {
+						"url": "{{dit_api_env}}/invoice",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Serviço para listar todos os invoices de um determinado usuário. \n\nEsse serviço deve retornar uma lista paginada de invoices com a data de pagamento o amount e tambem o amountComputed que é o valor somado ao valor de taxa sobre o atraso. \n\n```json\n{\n\t\"name\": \"Carro\",\n    \"amount\": 651.1,\n    \"paymentDate\": \"2020-07-10\",\n    \"computedAmount\": 660.793,\n    \"lateDays\": 9\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "/invoice/:id",
+					"request": {
+						"url": "{{dit_api_env}}/invoice/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Busca um invoice pelo id."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

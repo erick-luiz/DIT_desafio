@@ -1,0 +1,5 @@
+databaseChangeLog:
+- include:
+    file: db/changelog/01_create_invoice.xml
+- include:
+    file: db/changelog/02_create_hibernate_sequence.xml
