@@ -25,11 +25,11 @@ Para fazer as chamadas para a APP, a pasta _doc_ possui a coleção com os reque
 
 # Sobre os recursos da API 
 
-* Inserção: a API permite que sejam criados invoices (faturas), e na sua criação ela validará as taxas que devem ser cobradas no momento da criação da mesma. Com isso nas buscas teremos essa taxa sendo aplicada num preço computado. 
+* __Inserção__: a API permite que sejam criados invoices (faturas), e na sua criação ela validará as taxas que devem ser cobradas no momento da criação da mesma. Com isso nas buscas teremos essa taxa sendo aplicada num preço computado. 
 
-* Busca todos: um get all paginado que deve retornar todas as contas cadastradas 
+* __Busca__: um get all paginado que deve retornar todas as contas cadastradas 
 
-* Busca por id: um get por id para que seja possível consultar uma determinada conta
+* __Busca por id__: um get por id para que seja possível consultar uma determinada conta
 
 # O que a aplicação não faz? 
 
